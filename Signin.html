@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        .txt {
+            background-color: black;
+            color: white;
+            padding: 3px;
+            border-radius: 90px;
+        }
+
+        body {
+            background-color: aliceblue;
+        }
+
+        div {
+            overflow-x: hidden;
+        }
+
+        .tp {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 20px;
+        }
+
+        .fm {
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body data-ng-app="myPage" data-ng-controller="myControl">
+    <div class="jumbotron text-center">
+        <h1>Sign in Page</h1>
+        <p>Make yourself at <span class="txt">home</span>.</p>
+    </div>
+    <div class="justify-content-center" ng-init="hour=24">
+        <h2 style="text-align:center;" ng-show="hour < 12"> Good Morning {{username}}</h2>
+        <h2 style="text-align:center;" ng-show="hour > 12"> Good Afternoon {{username}}</h2>
+        <form method="post" action="Homepage.html" target="_self" class="container-fluid fm">
+            <input type="text" data-ng-model="username" placeholder="Username..." class="form-control" minlength="3"
+                required></br>
+            <input type="password" placeholder="Password..." class="form-control" minlength="6" required></br>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" required> Remember me
+                </label></br>
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        <p>{{check}}</p>
+    </div>
+    <script src="angular-module1.js"></script>
+    <script src="angular-controller1.js"></script>
+</body>
+
+</html>
